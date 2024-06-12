@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_application/widget/Card.dart';
 
 void main() {
   runApp(const MainApp());
@@ -25,7 +26,7 @@ class MainApp extends StatelessWidget {
           width: double.maxFinite,
           color: Colors.blueGrey.shade600,
           child: Column(children: [
-            const Text("Notes here"),
+            MyCard(),
           ]),
         ),
       ),
