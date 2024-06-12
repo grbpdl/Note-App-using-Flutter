@@ -21,18 +21,18 @@ class MyCard extends StatelessWidget {
             Expanded(
               child: Text(
                 note,
-                style: TextStyle(fontSize: 20, color: Colors.white),
+                style: const TextStyle(fontSize: 20, color: Colors.white),
               ),
             ),
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.black,
               ),
               child: IconButton(
                 hoverColor: Colors.red,
                 onPressed: onDelete,
-                icon: Icon(
+                icon: const Icon(
                   Icons.delete,
                   color: Colors.white,
                   size: 30,

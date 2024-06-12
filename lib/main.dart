@@ -13,7 +13,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Your Notes",
       home: NotesScreen(),
@@ -87,15 +87,15 @@ class _NotesScreenState extends State<NotesScreen> {
       floatingActionButton: FloatingActionButton.large(
         onPressed: addNotes,
         backgroundColor: Colors.white,
-        child: Icon(
+        hoverColor: Colors.green,
+        focusColor: Colors.amber,
+        child: const Icon(
           Icons.add,
           color: Colors.black,
         ),
-        hoverColor: Colors.green,
-        focusColor: Colors.amber,
       ),
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Write your Notes",
           style: TextStyle(fontSize: 30),
         ),
