@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:note_application/widget/Card.dart';
 
-void main() {
+import 'helper/shared_pref.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SharedPrefs().init();
   runApp(const MainApp());
 }
 
