@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class MyCard extends StatelessWidget {
-  const MyCard({super.key});
+  final String note;
+  final VoidCallback onDelete;
+
+  const MyCard({Key? key, required this.note, required this.onDelete})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,33 +15,33 @@ class MyCard extends StatelessWidget {
         color: Colors.grey,
         elevation: 4,
         child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(
-                child: Text(
-                  "This is a note xbsf sfb sb sfv ",
-                  style: TextStyle(fontSize: 80, color: Colors.white),
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: Text(
+                note,
+                style: TextStyle(fontSize: 20, color: Colors.white),
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.black,
+              ),
+              child: IconButton(
+                hoverColor: Colors.red,
+                onPressed: onDelete,
+                icon: Icon(
+                  Icons.delete,
+                  color: Colors.white,
+                  size: 30,
                 ),
               ),
-              Container(
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.black,
-                ),
-                child: IconButton(
-                    hoverColor: Colors.red,
-                    onPressed: delete,
-                    icon: Icon(
-                      Icons.delete,
-                      color: Colors.white,
-                      size: 100,
-                    )),
-              )
-            ]),
+            )
+          ],
+        ),
       ),
     );
   }
-
-  void delete() {}
 }
