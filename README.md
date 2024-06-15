@@ -1,3 +1,3 @@
 # note_application
 
-A new Flutter project.
+A Note Saving FLutter app for the functionality Data storing Locally and Data Being Presistent.
